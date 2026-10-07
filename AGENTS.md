@@ -8,3 +8,7 @@
 > Commits you push to the connected branch sync back to Lovable and show up in
 > the editor, so keep the branch in a working state.
 <!-- LOVABLE:END -->
+
+- Business details (WhatsApp, phone, address, vets) live only in src/config/site.ts — one place to update real info.
+- All contact forms go through src/lib/whatsapp.ts (wa.me links); no database or backend storage by client requirement.
+- Blog articles are static entries in src/content/blog.ts — add posts there, no CMS.
