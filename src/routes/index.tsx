@@ -39,12 +39,12 @@ function Home() {
     <>
       {/* HERO */}
       <section className="relative overflow-hidden bg-background">
-        <div className="relative h-[52vh] min-h-[340px] lg:absolute lg:inset-0 lg:h-auto">
+        <div className="relative h-[48vh] min-h-[320px] lg:absolute lg:inset-0 lg:h-auto">
           <img src={hero} alt="Veterinarian examining a golden retriever with a stethoscope" width={1920} height={1088} className="h-full w-full object-cover object-[70%_center]" />
           <div className="absolute inset-0 hidden hero-wash lg:block" />
           <div className="absolute inset-0 hero-wash-mobile lg:hidden" />
         </div>
-        <div className="container-80 relative -mt-24 pb-14 lg:mt-0 lg:flex lg:min-h-[92vh] lg:items-center lg:pb-0 lg:pt-36">
+        <div className="container-80 relative -mt-10 pb-14 lg:mt-0 lg:flex lg:min-h-[92vh] lg:items-center lg:pb-0 lg:pt-36">
           <div className="max-w-xl">
             <p className="eyebrow">Highglen · Harare</p>
             <h1 className="mt-4 text-[2.6rem] font-extrabold leading-[1.02] sm:text-6xl xl:text-7xl">
@@ -97,7 +97,7 @@ function Home() {
           </div>
           <ul className="mt-14 grid border-t border-border sm:grid-cols-2 lg:grid-cols-4">
             {SERVICES.map(({ icon: Icon, title, text }) => (
-              <li key={title} className="border-b border-border py-8 sm:px-6 sm:[&:nth-child(odd)]:pl-0 lg:[&:not(:nth-child(4n))]:border-r lg:[&:nth-child(4n+1)]:pl-0">
+              <li key={title} className="border-b border-border py-8 pr-6 sm:[&:nth-child(even)]:pl-6 lg:pl-6 lg:[&:nth-child(4n+1)]:pl-0 lg:[&:not(:nth-child(4n))]:border-r">
                 <Icon className="h-7 w-7 text-primary" strokeWidth={1.6} />
                 <h3 className="mt-5 text-lg font-bold">{title}</h3>
                 <p className="mt-2 text-muted-foreground">{text}</p>

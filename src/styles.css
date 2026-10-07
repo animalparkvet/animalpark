@@ -174,8 +174,8 @@
 @utility hero-wash-mobile {
   background: linear-gradient(
     180deg,
-    color-mix(in oklab, var(--color-background) 30%, transparent) 0%,
-    var(--color-background) 62%
+    color-mix(in oklab, var(--color-background) 0%, transparent) 55%,
+    var(--color-background) 100%
   );
 }
 
