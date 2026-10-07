@@ -1,26 +1,18 @@
-# Website Launchpad
+# Animal Park Veterinary Surgery
 
-Develope the website based on the provided materials
+Website for Animal Park Veterinary Surgery in Highglen, Harare.
 
-This project was built with [Lovable](https://lovable.dev).
+## Deployment
 
-**Live app**: https://animalpark.lovable.app
-
-## Build with Lovable
-
-Continue developing this project in the [Lovable editor](https://lovable.dev/projects/f31d863d-cb1b-4309-92bc-7c085710d689).
-
-- **Ship faster**: describe what you want to build and Lovable handles the code.
-- **Stay in sync**: every change made in Lovable is committed straight to this repository.
-- **Full ownership**: this code is yours. Push to `main` on GitHub and your changes sync back into Lovable, ready for your next prompt.
+The project uses TanStack Start with Nitro's Vercel preset. Pushes to `main` are intended to deploy through the connected Vercel project.
 
 ## Development
 
-Prefer working locally? You need Node.js and npm — [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating).
+Install [Bun](https://bun.sh), then run:
 
 ```sh
-git clone <this-repository-url>
-cd <repository-name>
-npm i
-npm run dev
+bun install
+bun run dev
 ```
+
+Create a production build with `bun run build`.
