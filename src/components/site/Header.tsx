@@ -41,8 +41,8 @@ export function Header() {
           <img
             src={logo.url}
             alt="Animal Park Veterinary Surgery"
-            width={500}
-            height={500}
+            width={442}
+            height={384}
             className={`w-auto transition-all duration-300 ${
               scrolled ? "h-16 py-1 lg:h-20" : "h-24 pt-2 lg:h-36 lg:pt-3"
             }`}

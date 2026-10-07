@@ -10,7 +10,7 @@ export function Footer() {
     <footer className="border-t border-border bg-mist">
       <div className="container-80 grid gap-10 py-14 md:grid-cols-[auto_1fr] md:items-start">
         <div className="flex items-start gap-5">
-          <img src={logo.url} alt="Animal Park Veterinary Surgery" width={500} height={500} loading="lazy" className="h-28 w-auto" />
+          <img src={logo.url} alt="Animal Park Veterinary Surgery" width={442} height={384} loading="lazy" className="h-28 w-auto" />
           <address className="pt-3 text-sm not-italic leading-relaxed text-muted-foreground">
             <span className="font-semibold text-foreground">{BUSINESS.name}</span>
             <br />
