@@ -24,7 +24,6 @@ export function ContactPopups({ children }: { children: ReactNode }) {
     const kind = url.hash.slice(1);
     if (kind !== "ask" && kind !== "book") return;
     event.preventDefault();
-    event.stopPropagation();
     setForm(kind);
   };
 
