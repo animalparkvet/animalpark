@@ -55,7 +55,7 @@ export const posts: Post[] = [
     body: [
       { paragraphs: ["Dogs can overheat more quickly than people expect, especially flat-faced breeds, older dogs and dogs with thick coats."] },
       { heading: "Practical tips", list: ["Walk in the early morning or evening", "Choose shaded routes and avoid hot tar", "Carry water for your dog on walks", "Never leave a dog in a parked car", "Make sure there is shade and water at home"] },
-      { heading: "Warning signs", paragraphs: ["Heavy panting, drooling, weakness, vomiting or collapse can be signs of heat stress. This is an emergency — cool your dog gently and contact a vet immediately."] },
+      { heading: "Warning signs", paragraphs: ["Heavy panting, drooling, weakness, vomiting or collapse can be signs of heat stress. This is an emergency. Cool your dog gently and contact a vet immediately."] },
     ],
   },
 ];

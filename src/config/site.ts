@@ -23,7 +23,7 @@ export const SOCIAL = {
 
 export const BUSINESS = {
   name: "Animal Park Veterinary Surgery",
-  addressLines: ["Mashwede Village", "Bay 9", "Highglen", "Harare", "Zimbabwe"],
+  addressLines: ["Mashwede Village", "Bay 8", "Highglen", "Harare", "Zimbabwe"],
   vets: [
     { name: "Dr Munzeiwa", role: "Resident Veterinarian" },
     { name: "Dr Kandemiiri", role: "Resident Veterinarian" },

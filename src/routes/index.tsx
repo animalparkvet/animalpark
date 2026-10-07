@@ -14,7 +14,7 @@ export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
       { title: "Animal Park Veterinary Surgery | Vet in Highglen, Harare" },
-      { name: "description", content: "Compassionate veterinary care for dogs, cats and companion animals at Mashwede Village, Bay 9, Highglen, Harare. Request an appointment or ask a vet on WhatsApp." },
+      { name: "description", content: "Compassionate veterinary care for dogs, cats and companion animals at Mashwede Village, Bay 8, Highglen, Harare. Request an appointment or ask a vet on WhatsApp." },
       { property: "og:title", content: "Animal Park Veterinary Surgery | Vet in Highglen, Harare" },
       { property: "og:description", content: "Compassionate veterinary care in Harare. Request an appointment or ask a vet on WhatsApp." },
     ],
@@ -50,14 +50,14 @@ function Home() {
               Compassionate veterinary care in Harare
             </h1>
             <p className="mt-6 max-w-md text-lg text-muted-foreground">
-              Professional, friendly care for your pets — and clear, honest guidance for you — at Animal Park Veterinary Surgery.
+              Professional, friendly care for your pets, with clear and honest guidance from Animal Park Veterinary Surgery.
             </p>
             <div className="mt-8 flex flex-col gap-3 sm:flex-row">
               <Link to="/" hash="book" className="btn btn-primary"><CalendarCheck className="h-5 w-5" /> Request Appointment</Link>
               <Link to="/" hash="ask" className="btn btn-outline bg-background/70"><MessageCircle className="h-5 w-5" /> Ask a Vet</Link>
             </div>
             <p className="mt-8 flex items-center gap-2 text-sm text-muted-foreground">
-              <MapPin className="h-4 w-4 text-primary" /> Mashwede Village, Bay 9, Highglen
+              <MapPin className="h-4 w-4 text-primary" /> Mashwede Village, Bay 8, Highglen
             </p>
           </div>
         </div>
@@ -72,11 +72,11 @@ function Home() {
             <h2 className="mt-4 text-4xl font-bold leading-tight lg:text-5xl">Your local veterinary surgery in Highglen</h2>
             <div className="mt-6 space-y-4 text-lg text-muted-foreground">
               <p>Animal Park Veterinary Surgery is a neighbourhood practice caring for pets and companion animals across Harare.</p>
-              <p>We believe good veterinary care starts with listening — to you and to your pet — and explaining things clearly so you can make the right decisions together.</p>
+              <p>We believe good veterinary care starts with listening to you and your pet, then explaining things clearly so you can make the right decisions together.</p>
             </div>
             <div className="mt-8 flex items-start gap-4 border-t border-border pt-6">
               <MapPin className="mt-1 h-5 w-5 shrink-0 text-primary" />
-              <p className="font-medium">Mashwede Village, Bay 9,<br />Highglen, Harare</p>
+              <p className="font-medium">Mashwede Village, Bay 8,<br />Highglen, Harare</p>
             </div>
           </div>
         </div>
@@ -115,12 +115,14 @@ function Home() {
         <div className="container-80">
           <p className="eyebrow !text-leaf">Our vets</p>
           <h2 className="mt-4 max-w-2xl text-4xl font-bold leading-tight lg:text-5xl">The people who'll look after your pet</h2>
-          <div className="mt-14 grid gap-10 sm:grid-cols-2 lg:gap-16">
+          <p className="mt-4 max-w-2xl text-base text-forest-foreground/75">
+            Our doctors lead a compassionate team of animal lovers, dedicated to treating every pet with patience, kindness and care.
+          </p>
+          <div className="mt-10 grid gap-10 sm:grid-cols-2 lg:gap-16">
             {BUSINESS.vets.map((v) => (
-              <article key={v.name} className="grid grid-cols-[7rem_1fr] items-center gap-6 sm:grid-cols-1 lg:grid-cols-[11rem_1fr]">
-                {/* Replace with a real portrait: <img src={...} className="aspect-square ..." /> */}
-                <div className="flex aspect-square items-center justify-center rounded-md bg-forest-foreground/10">
-                  <User className="h-12 w-12 text-forest-foreground/50" strokeWidth={1.2} />
+              <article key={v.name} className="grid grid-cols-[5rem_1fr] items-center gap-5 lg:grid-cols-[6rem_1fr]">
+                <div className="flex size-20 items-center justify-center rounded-full bg-forest-foreground/10 lg:size-24">
+                  <User className="h-9 w-9 text-forest-foreground/50 lg:h-10 lg:w-10" strokeWidth={1.2} />
                 </div>
                 <div>
                   <h3 className="text-2xl font-bold lg:text-3xl">{v.name}</h3>

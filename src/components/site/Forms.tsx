@@ -72,7 +72,7 @@ export function EnquiryForm() {
           <option value="">Select…</option>
           <option>General question</option>
           <option>Would like to be seen soon</option>
-          <option>Urgent — please call me</option>
+          <option>Urgent, please call me</option>
         </select>
       </Field>
       <Field label="Preferred appointment date" name="preferredDate" optional><input {...bind("preferredDate")} type="date" /></Field>

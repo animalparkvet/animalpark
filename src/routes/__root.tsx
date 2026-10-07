@@ -65,7 +65,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Animal Park Veterinary Surgery — Harare" },
+      { title: "Animal Park Veterinary Surgery, Harare" },
       { name: "description", content: "Veterinary care for pets in Highglen, Harare." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },

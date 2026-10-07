@@ -14,7 +14,7 @@ export function Footer() {
           <address className="pt-3 text-sm not-italic leading-relaxed text-muted-foreground">
             <span className="font-semibold text-foreground">{BUSINESS.name}</span>
             <br />
-            Mashwede Village, Bay 9
+            Mashwede Village, Bay 8
             <br />
             Highglen, Harare, Zimbabwe
           </address>

@@ -37,7 +37,7 @@ export function Header() {
       }`}
     >
       <div className="container-80 flex items-center justify-between gap-6">
-        <Link to="/" hash="top" aria-label="Animal Park Veterinary Surgery — home" className="shrink-0" onClick={close}>
+        <Link to="/" hash="top" aria-label="Animal Park Veterinary Surgery home" className="shrink-0" onClick={close}>
           <img
             src={logo}
             alt="Animal Park Veterinary Surgery"
