@@ -1,7 +1,7 @@
 import { Link } from "@tanstack/react-router";
 import { useEffect, useState } from "react";
 import { Menu, X } from "lucide-react";
-import logo from "@/assets/animal-park-logo.png.asset.json";
+import logo from "@/assets/animal-park-logo.png";
 
 export const NAV: { label: string; hash?: string; to?: "/blog" }[] = [
   { label: "Home", hash: "top" },
@@ -39,7 +39,7 @@ export function Header() {
       <div className="container-80 flex items-center justify-between gap-6">
         <Link to="/" hash="top" aria-label="Animal Park Veterinary Surgery — home" className="shrink-0" onClick={close}>
           <img
-            src={logo.url}
+            src={logo}
             alt="Animal Park Veterinary Surgery"
             width={442}
             height={384}

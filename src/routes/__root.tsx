@@ -108,6 +108,31 @@ function RootShell({ children }: { children: ReactNode }) {
 function RootComponent() {
   const { queryClient } = Route.useRouteContext();
 
+  useEffect(() => {
+    if (document.getElementById("tawk-chat-script")) return;
+
+    const tawkWindow = window as Window & {
+      Tawk_API?: Record<string, unknown>;
+      Tawk_LoadStart?: Date;
+    };
+    tawkWindow.Tawk_API = tawkWindow.Tawk_API || {};
+    tawkWindow.Tawk_LoadStart = new Date();
+
+    const script = document.createElement("script");
+    script.id = "tawk-chat-script";
+    script.async = true;
+    script.src = "https://embed.tawk.to/6ac6463d20f9f834c9ea1ced/1k4b84p20";
+    script.charset = "UTF-8";
+    script.setAttribute("crossorigin", "*");
+
+    const firstScript = document.getElementsByTagName("script")[0];
+    if (firstScript?.parentNode) {
+      firstScript.parentNode.insertBefore(script, firstScript);
+    } else {
+      document.head.appendChild(script);
+    }
+  }, []);
+
   return (
     <QueryClientProvider client={queryClient}>
       <ContactPopups>
