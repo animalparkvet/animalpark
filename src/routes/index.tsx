@@ -7,7 +7,6 @@ import hero from "@/assets/hero.jpg";
 import about from "@/assets/about.jpg";
 import { posts } from "@/content/blog";
 import { BlogCard } from "@/components/site/BlogCard";
-import { AppointmentForm, EnquiryForm } from "@/components/site/Forms";
 import { BUSINESS, EMAIL, OPENING_HOURS, PHONE_NUMBER, directionsUrl, mapEmbedUrl } from "@/config/site";
 import { whatsappUrl } from "@/lib/whatsapp";
 
@@ -137,31 +136,21 @@ function Home() {
         </div>
       </section>
 
-      {/* ASK A VET */}
-      <section id="ask" className="py-20 lg:py-28">
-        <div className="container-80 grid gap-12 lg:grid-cols-[0.8fr_1.2fr] lg:gap-20">
+      {/* CONTACT REQUESTS */}
+      <section className="border-y border-border bg-mist py-14 lg:py-16">
+        <div className="container-80 grid gap-10 md:grid-cols-2 md:gap-16">
           <div>
             <p className="eyebrow">Ask a vet</p>
-            <h2 className="mt-4 text-4xl font-bold leading-tight lg:text-5xl">Worried about your pet?</h2>
-            <p className="mt-6 text-lg text-muted-foreground">
-              Tell us what's happening. Your enquiry is prepared as a WhatsApp message to our team — just press send in WhatsApp.
-            </p>
+            <h2 className="mt-3 text-3xl font-bold">Worried about your pet?</h2>
+            <p className="mt-3 text-muted-foreground">Get in touch with our team about your pet's health.</p>
+            <Link to="/" hash="ask" className="btn btn-outline mt-5"><MessageCircle className="h-5 w-5" /> Ask a Vet</Link>
           </div>
-          <EnquiryForm />
-        </div>
-      </section>
-
-      {/* BOOK */}
-      <section id="book" className="border-y border-border bg-mist py-20 lg:py-28">
-        <div className="container-80 grid gap-12 lg:grid-cols-[0.8fr_1.2fr] lg:gap-20">
           <div>
             <p className="eyebrow">Appointments</p>
-            <h2 className="mt-4 text-4xl font-bold leading-tight lg:text-5xl">Request an appointment</h2>
-            <p className="mt-6 text-lg text-muted-foreground">
-              Choose a preferred day and time and send your request on WhatsApp.
-            </p>
+            <h2 className="mt-3 text-3xl font-bold">Plan your pet's next visit</h2>
+            <p className="mt-3 text-muted-foreground">Let us know a day and time that suits you.</p>
+            <Link to="/" hash="book" className="btn btn-primary mt-5"><CalendarCheck className="h-5 w-5" /> Request Appointment</Link>
           </div>
-          <AppointmentForm />
         </div>
       </section>
 
@@ -182,7 +171,9 @@ function Home() {
       </section>
 
       {/* CONTACT */}
-      <section id="contact" className="bg-forest text-forest-foreground">
+      <section id="contact" className="relative isolate overflow-hidden bg-forest text-forest-foreground">
+        <iframe title="Map showing Animal Park Veterinary Surgery" src={mapEmbedUrl} loading="lazy" referrerPolicy="no-referrer-when-downgrade" className="absolute inset-0 -z-20 h-full w-full border-0" />
+        <div className="visit-overlay pointer-events-none absolute inset-0 -z-10" />
         <div className="container-80 grid gap-12 py-20 lg:grid-cols-2 lg:gap-20 lg:py-28">
           <div>
             <p className="eyebrow !text-leaf">Visit us</p>
@@ -204,9 +195,6 @@ function Home() {
               <Link to="/" hash="ask" className="btn btn-light">Ask a Vet</Link>
               <Link to="/" hash="book" className="btn btn-light">Book Appointment</Link>
             </div>
-          </div>
-          <div className="min-h-[340px] overflow-hidden rounded-md bg-forest-foreground/10">
-            <iframe title="Map showing Animal Park Veterinary Surgery" src={mapEmbedUrl} loading="lazy" referrerPolicy="no-referrer-when-downgrade" className="h-full min-h-[340px] w-full border-0" />
           </div>
         </div>
       </section>

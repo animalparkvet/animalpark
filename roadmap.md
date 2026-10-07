@@ -1,0 +1,3 @@
+- [ ] Make Ask a Vet and appointment forms compact shared popups.
+- [ ] Use the Visit Us map as a full-section background with a readable overlay.
+- [ ] Verify popup opening, closing, validation, and layout.
