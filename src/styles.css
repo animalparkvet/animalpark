@@ -134,6 +134,19 @@
   transition: background-color 0.15s, color 0.15s, border-color 0.15s;
 }
 
+@utility compact-field {
+  min-height: 2.375rem;
+  padding: 0.4rem 0.65rem;
+  font-size: 1rem;
+}
+
+@utility visit-overlay {
+  background: linear-gradient(90deg, color-mix(in oklab, var(--forest) 95%, transparent) 0%, color-mix(in oklab, var(--forest) 88%, transparent) 38%, color-mix(in oklab, var(--forest) 35%, transparent) 70%, color-mix(in oklab, var(--forest) 12%, transparent) 100%);
+  @media (max-width: 1023px) {
+    background: color-mix(in oklab, var(--forest) 85%, transparent);
+  }
+}
+
 @utility btn-primary {
   background: var(--color-primary);
   color: var(--color-primary-foreground);

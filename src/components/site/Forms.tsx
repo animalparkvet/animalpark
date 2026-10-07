@@ -1,5 +1,6 @@
 import { useState, type ReactNode } from "react";
 import { MessageCircle } from "lucide-react";
+import { Button } from "@/components/ui/button";
 import { formatAppointment, formatEnquiry, isValidPhone, openWhatsApp } from "@/lib/whatsapp";
 
 type Errors = Record<string, string>;
@@ -7,7 +8,7 @@ type Errors = Record<string, string>;
 function Field({ label, name, error, optional, children }: { label: string; name: string; error?: string; optional?: boolean; children: ReactNode }) {
   return (
     <label htmlFor={name} className="block">
-      <span className="mb-1.5 block text-sm font-semibold">
+      <span className="mb-1 block text-sm font-semibold">
         {label} {optional && <span className="font-normal text-muted-foreground">(optional)</span>}
       </span>
       {children}
@@ -27,7 +28,7 @@ function useForm<T extends Record<string, string>>(initial: T) {
     value: data[name],
     "aria-invalid": errors[name] ? true : undefined,
     onChange: (e: { target: { value: string } }) => setData((d) => ({ ...d, [name]: e.target.value })),
-    className: "field",
+    className: "field compact-field",
   });
   return { data, errors, setErrors, bind };
 }
@@ -54,7 +55,7 @@ export function EnquiryForm() {
     openWhatsApp(formatEnquiry(data));
   };
   return (
-    <form onSubmit={submit} noValidate className="grid gap-5 sm:grid-cols-2">
+    <form onSubmit={submit} noValidate className="grid gap-x-4 gap-y-3 sm:grid-cols-2">
       <Field label="Owner name" name="owner" error={errors.owner}><input {...bind("owner")} autoComplete="name" /></Field>
       <Field label="Phone number" name="phone" error={errors.phone}><input {...bind("phone")} type="tel" autoComplete="tel" /></Field>
       <Field label="Pet name" name="petName" error={errors.petName}><input {...bind("petName")} /></Field>
@@ -64,7 +65,7 @@ export function EnquiryForm() {
       <Field label="Pet age" name="age" optional><input {...bind("age")} placeholder="e.g. 3 years" /></Field>
       <Field label="How long has this been happening?" name="duration" error={errors.duration}><input {...bind("duration")} placeholder="e.g. 2 days" /></Field>
       <div className="sm:col-span-2">
-        <Field label="Issue / symptoms" name="issue" error={errors.issue}><textarea {...bind("issue")} rows={4} placeholder="Describe what you've noticed" /></Field>
+        <Field label="Issue / symptoms" name="issue" error={errors.issue}><textarea {...bind("issue")} rows={2} placeholder="Describe what you've noticed" /></Field>
       </div>
       <Field label="Urgency" name="urgency" error={errors.urgency}>
         <select {...bind("urgency")}>
@@ -76,10 +77,10 @@ export function EnquiryForm() {
       </Field>
       <Field label="Preferred appointment date" name="preferredDate" optional><input {...bind("preferredDate")} type="date" /></Field>
       <div className="sm:col-span-2">
-        <p className="mb-5 border-l-2 border-primary bg-mist px-4 py-3 text-sm text-muted-foreground">
+        <p className="mb-3 border-l-2 border-primary bg-mist px-3 py-2 text-xs leading-relaxed text-muted-foreground">
           An online enquiry does not replace a veterinary examination. If your pet is in distress, bleeding, struggling to breathe, collapsed or may have been poisoned, contact a veterinarian immediately.
         </p>
-        <button type="submit" className="btn btn-primary w-full sm:w-auto"><MessageCircle className="h-5 w-5" /> Send enquiry via WhatsApp</button>
+        <Button type="submit" className="w-full"><MessageCircle /> Send enquiry via WhatsApp</Button>
       </div>
     </form>
   );
@@ -101,7 +102,7 @@ export function AppointmentForm() {
   };
   const b = (n: keyof typeof data) => ({ ...bind(n), id: `ap-${n}` });
   return (
-    <form onSubmit={submit} noValidate className="grid gap-5 sm:grid-cols-2">
+    <form onSubmit={submit} noValidate className="grid gap-x-4 gap-y-3 sm:grid-cols-2">
       <Field label="Owner name" name="ap-owner" error={errors.owner}><input {...b("owner")} autoComplete="name" /></Field>
       <Field label="Phone" name="ap-phone" error={errors.phone}><input {...b("phone")} type="tel" autoComplete="tel" /></Field>
       <Field label="Pet name" name="ap-petName" error={errors.petName}><input {...b("petName")} /></Field>
@@ -131,11 +132,11 @@ export function AppointmentForm() {
         </select>
       </Field>
       <div className="sm:col-span-2">
-        <Field label="Additional information" name="ap-notes" optional><textarea {...b("notes")} rows={3} /></Field>
+        <Field label="Additional information" name="ap-notes" optional><textarea {...b("notes")} rows={2} /></Field>
       </div>
-      <div className="sm:col-span-2 flex flex-col gap-3 sm:flex-row sm:items-center">
-        <button type="submit" className="btn btn-primary w-full sm:w-auto"><MessageCircle className="h-5 w-5" /> Request via WhatsApp</button>
-        <span className="text-sm text-muted-foreground">We'll confirm your appointment time with you.</span>
+      <div className="sm:col-span-2 flex flex-col gap-2">
+        <Button type="submit" className="w-full"><MessageCircle /> Request via WhatsApp</Button>
+        <span className="text-center text-xs text-muted-foreground">We'll confirm your appointment time with you.</span>
       </div>
     </form>
   );
